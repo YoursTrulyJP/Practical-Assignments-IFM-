@@ -23,7 +23,7 @@ Private intialallowance As Double
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        PLACETEXTIG(0, 0, "Number of transaction")
+        PLACETEXTIG(0, 0, "Transaction number")
         PLACETEXTIG(0, 1, "Week 1")
         PLACETEXTIG(0, 2, "Week 2")
         PLACETEXTIG(0, 3, "Week 3")
@@ -49,12 +49,7 @@ Private intialallowance As Double
                 MsgBox("Your Balance is: R " + CStr(Balance) + " and you want to withdraw: R " + CStr(Numwithdraw))
                 Numwithdraw = CDbl(InputBox("Re-Enter the amount you want to withdraw"))
             End While
-            'grdMynumbers.Row = counter
-            'grdMynumbers.Col = 0
-            'grdMynumbers.Text = CStr(counter)
-
-            'grdMynumbers.Col = 1
-            'grdMynumbers.Text = CStr(numbers(counter))
+           
 
             PLACETEXTIG(counter, 0, CStr(counter))
             PLACETEXTIG(0, 0, CStr(numbers(counter)))
@@ -88,16 +83,7 @@ Private intialallowance As Double
         grdMynumbers.Col = 1
         grdMynumbers.Text = CStr(numbers(counter))
 
-        'Code commented out:
-        'WEEK 2
-
-        'intialallowance = CDbl(txtintialallowanc.Text)
-        'numberadded = 7
-
-
-        'ReDim numbers(numberadded)
-        'sum = 0
-        'grdMynumbers.Rows = numberadded + 2
+       
 
         For counter = 1 To 7
             numbers(counter) = CInt(InputBox("Enter amount of money you want to withdraw"))
@@ -113,9 +99,7 @@ Private intialallowance As Double
             grdMynumbers.Col = 2
             grdMynumbers.Text = CStr(numbers(counter))
 
-            'PLACETEXTIG(counter, 0, CStr(counter))
-            'PLACETEXTIG(0, 2, CStr(numbers(counter)))
-
+            
             sum += numbers(counter)
         Next
         Balance = intialallowance - sum
@@ -127,9 +111,6 @@ Private intialallowance As Double
         grdMynumbers.Col = 2
         grdMynumbers.Text = CStr(sum)
 
-        'PLACETEXTIG(8, 0, CStr("Balance:"))
-        'PLACETEXTIG(0, 2, CStr(sum))
-
         Balance -= Numwithdraw
 
         If Balance <= 0 Then
@@ -139,15 +120,6 @@ Private intialallowance As Double
                 MsgBox("Your balance is equal or lower than R50")
             End If
         End If
-
-        'WEEK 3
-        'intialallowance = CDbl(txtintialallowanc.Text)
-        'numberadded = 7
-
-
-        'ReDim numbers(numberadded)
-        'sum = 0
-        'grdMynumbers.Rows = numberadded + 4
 
         For counter = 1 To 7
             numbers(counter) = CInt(InputBox("Enter amount of money you want to withdraw"))
@@ -163,9 +135,8 @@ Private intialallowance As Double
             grdMynumbers.Col = 3
             grdMynumbers.Text = CStr(numbers(counter))
 
-
-
             sum += numbers(counter)
+
         Next
         Balance = intialallowance - sum
 
