@@ -160,14 +160,6 @@ Private intialallowance As Double
             End If
         End If
 
-        'Code commented out 
-        'WEEK 4
-        'intialallowance = CDbl(txtintialallowanc.Text)
-        'numberadded = 7
-
-        'ReDim numbers(numberadded)
-        'sum = 0
-        'grdMynumbers.Rows = numberadded + 2
 
         For counter = 1 To 7
             numbers(counter) = CInt(InputBox("Enter amount of money you want to withdraw"))
@@ -182,10 +174,9 @@ Private intialallowance As Double
             grdMynumbers.Col = 4
             grdMynumbers.Text = CStr(numbers(counter))
 
-            'PLACETEXTIG(counter, 0, CStr(counter))
-            'PLACETEXTIG(0, 4, CStr(numbers(counter)))
 
             sum += numbers(counter)
+
         Next
         Balance = intialallowance - sum
 
@@ -199,6 +190,7 @@ Private intialallowance As Double
         PLACETEXTIG(8, 0, CStr("Balance: "))
         PLACETEXTIG(0, 4, CStr(sum))
 
+
         Balance -= Numwithdraw
         If Balance <= 0 Then
             MsgBox("No more transactions allowed")
@@ -208,8 +200,10 @@ Private intialallowance As Double
             End If
         End If
 
+
         Totalbalance = Balance1 + balance2 + balance3 + Balance
         Average = Totalbalance / 4
+
 
     End Sub
 End Class
